@@ -21,8 +21,8 @@ class StartPage extends StatelessWidget {
               Positioned.fill(
                 child: Opacity(
                   opacity: 0.4,
-                  child:
-                      Image.asset("assets/images/start.png", fit: BoxFit.cover),
+                  child: Image.asset("assets/images/start.webp",
+                      fit: BoxFit.cover),
                 ),
               ),
               const Align(
@@ -42,7 +42,8 @@ class StartPage extends StatelessWidget {
                   children: [
                     TextButton(
                         onPressed: () {
-                          navigateWithStrokeTransition(context, const ToRyuMonPage());
+                          navigateWithStrokeTransition(
+                              context, const ToRyuMonPage());
                         },
                         child: const Padding(
                           padding: EdgeInsets.all(8.0),
@@ -54,17 +55,23 @@ class StartPage extends StatelessWidget {
                         )),
                     TextButton(
                         onPressed: () {
-                          FirebaseAnalytics.instance.logEvent(name: "how_to_play");
-                          showDialog(context: context, builder: (_) {
-                            return AlertDialog(
-                              title: const Text("How to play"),
-                              content: const Text("鯉→タップする\n鯉以外→タップしない"),
-                              actions: [
-                                TextButton(onPressed: () {
-                                  Navigator.of(context).pop();
-                                }, child: const Text("OK"))
-                              ],);
-                          });
+                          FirebaseAnalytics.instance
+                              .logEvent(name: "how_to_play");
+                          showDialog(
+                              context: context,
+                              builder: (_) {
+                                return AlertDialog(
+                                  title: const Text("How to play"),
+                                  content: const Text("鯉→タップする\n鯉以外→タップしない"),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: const Text("OK"))
+                                  ],
+                                );
+                              });
                         },
                         child: const Padding(
                           padding: EdgeInsets.all(8.0),

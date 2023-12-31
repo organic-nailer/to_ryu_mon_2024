@@ -94,13 +94,13 @@ class HomeGameView extends Component with HasGameRef<IToRyuMonGame> {
       ..priority = 2;
     add(_bgGoal);
 
-    _bgRock = SpriteComponent(sprite: await game.loadSprite("bg_rock.png"))
+    _bgRock = SpriteComponent(sprite: await game.loadSprite("bg_rock.webp"))
       ..position = Vector2(-350, 50 + topOffset)
       ..width = 400
       ..height = game.size.y
       ..priority = 3;
     add(_bgRock);
-    _bgRock2 = SpriteComponent(sprite: await game.loadSprite("bg_rock.png"))
+    _bgRock2 = SpriteComponent(sprite: await game.loadSprite("bg_rock.webp"))
       ..position = Vector2(game.size.x - 50, 50 + topOffset)
       ..anchor = Anchor.topRight
       ..width = 400

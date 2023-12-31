@@ -23,6 +23,7 @@ class GameController extends ChangeNotifier {
     FirebaseAnalytics.instance.logEvent(name: "game_over", parameters: {
       "score": _score,
     });
+    FirebaseAnalytics.instance.logPostScore(score: _score);
   }
 
   void incrementScore() {

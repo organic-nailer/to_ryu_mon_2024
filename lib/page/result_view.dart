@@ -3,6 +3,7 @@ import 'package:to_ryu_mon_2024/greetings.dart';
 import 'package:to_ryu_mon_2024/page/start_page.dart';
 import 'package:to_ryu_mon_2024/share/share.dart';
 import 'package:to_ryu_mon_2024/stroke_page_transition.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class ResultView extends StatelessWidget {
   final VoidCallback onRestart;
@@ -47,6 +48,13 @@ class ResultView extends StatelessWidget {
               child: const Text('Share',
                   style: TextStyle(fontSize: 30, color: Colors.white)),
             ),
+            if (score >= 1000)
+              TextButton(
+                onPressed: () async {
+                  await launchUrlString("https://photos.app.goo.gl/aCKwYcJGup36gwDYA");
+                },
+                child: const Text('New Year\'s Gift',
+                    style: TextStyle(fontSize: 30, color: Colors.white)),)
           ],
         ),
       ),
